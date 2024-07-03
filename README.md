@@ -80,3 +80,7 @@ Unit tests are written using Jest and React Testing Library to ensure all functi
 - Detecting win conditions (rows, columns, and diagonals)
 - Detecting draw conditions
 - Reset button functionality
+
+## Live Demo
+
+You can visit the live demo via https://tic-tac-toe-eric.vercel.app/
