@@ -1,8 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Tic Tac Toe Game
 
-## Getting Started
+This is a simple Tic Tac Toe game built with Next.js, TypeScript, and TailwindCSS. It includes basic functionalities like marking cells, detecting win and draw conditions, and resetting the game. Animations are added to enhance the user experience using `framer-motion`.
 
-First, run the development server:
+## Table of Contents
+
+- [Installation](#installation)
+- [Running the Application](#running-the-application)
+- [Running Tests](#running-tests)
+- [Approach and Design Decisions](#approach-and-design-decisions)
+
+## Installation
+
+To get started with this project, you need to have Node.js and npm installed on your machine.
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/EricP91/tic-tac-toe.git
+   cd tic-tac-toe
+   ```
+
+2. Install the dependencies:
+   ```bash
+   npm install
+   ```
+
+## Running the Application
+
+To run the application locally, use the following command:
 
 ```bash
 npm run dev
@@ -16,21 +41,42 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Running Tests
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+To run the unit test, use the following command:
 
-## Learn More
+```bash
+npm run test
+```
 
-To learn more about Next.js, take a look at the following resources:
+This will run all the tests defined in the `__tests__` directory using Jest and React Testing Library.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Approach and design decisions
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Components & Styled components
 
-## Deploy on Vercel
+- **Board**: Manages the game logic and renders the grid.
+- **Cell**: Represents each cell in the grid. Styled using styled-components and animated using framer-motion.
+- **ResetButton**: A button to reset the game state. Styled using styled-components and animated using framer-motion.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Game Logic
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The game logic is separated into a utility function `isGameEnded` which checks for win and draw conditions.
+
+### Styling
+
+Styling is done using TailwindCSS for rapid and responsive design, combined with styled-components for component-specific styles and animations.
+
+### Animations
+
+Animations are implemented using `framer-motion` for smooth and interactive UI transitions. For example, cells scale on hover and tap for a better user experience.
+
+### Testing
+
+Unit tests are written using Jest and React Testing Library to ensure all functionalities work correctly:
+
+- Rendering of the Tic Tac Toe grid
+- Marking cells with "X" and "O"
+- Detecting win conditions (rows, columns, and diagonals)
+- Detecting draw conditions
+- Reset button functionality
