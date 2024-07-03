@@ -90,7 +90,7 @@ const Board: React.FC = () => {
 
       {isDraw && (
         <span className="text-lg font-medium text-red-500 mb-4">
-          It's Draw!
+          {`It's Draw!`}
         </span>
       )}
 
