@@ -1,6 +1,6 @@
 # Tic Tac Toe Game
 
-This is a simple Tic Tac Toe game built with Next.js, TypeScript, and TailwindCSS. It includes basic functionalities like marking cells, detecting win and draw conditions, and resetting the game. Animations are added to enhance the user experience using `framer-motion`.
+This is a simple Tic Tac Toe game built with Next.js, TypeScript, and TailwindCSS with Styled Components. It includes basic functionalities like marking cells, detecting win and draw conditions, and resetting the game. Animations are added to enhance the user experience using `framer-motion`.
 
 ## Table of Contents
 
@@ -16,7 +16,7 @@ To get started with this project, you need to have Node.js and npm installed on 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/EricP91/tic-tac-toe.git
+   git clone https://github.com/EricP91/TicTacToe.git
    cd tic-tac-toe
    ```
 
