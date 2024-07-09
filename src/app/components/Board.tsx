@@ -6,7 +6,6 @@ import {
   BoardState,
   BOARD_SIZE,
   isGameEnded,
-  isBoardFull,
 } from "../utils/gameLogic";
 
 const ResetButton = styled(motion.button)`
@@ -41,7 +40,7 @@ const Board: React.FC = () => {
   const [currentPlayer, setCurrentPlayer] = useState<BoardState>(BoardState.X);
   const [winner, setWinner] = useState<BoardState>(BoardState.Empty);
   const [gameEnded, setGameEnded] = useState<Boolean>(false);
-  const isDraw = isBoardFull(board) && winner === BoardState.Empty;
+  const [isDraw, setIsDraw] = useState<Boolean>(false);
 
   useEffect(() => {
     resetBoard();
@@ -56,6 +55,7 @@ const Board: React.FC = () => {
     setCurrentPlayer(BoardState.X);
     setWinner(BoardState.Empty);
     setGameEnded(false);
+    setIsDraw(false);
   }, [setBoard, setCurrentPlayer, setWinner, setGameEnded]);
 
   const putStone = useCallback(
@@ -72,6 +72,8 @@ const Board: React.FC = () => {
       if (gameResult !== BoardState.Empty) {
         if (gameResult !== BoardState.Full) {
           setWinner(currentPlayer);
+        } else {
+          setIsDraw(true);
         }
         setGameEnded(true);
         return;

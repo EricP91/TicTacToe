@@ -49,11 +49,11 @@ export const isGameEnded = (board: BoardState[][], rowId: number, colId: number)
 		if (count === BOARD_SIZE - 1) {
 			return board[rowId][colId];
 		}
-
-		if(isBoardFull(board)) {
-			return BoardState.Full;
-		}
 	}
 
+	if(isBoardFull(board)) {
+		return BoardState.Full;
+	}
+	
 	return BoardState.Empty;
 }
